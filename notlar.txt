@@ -1,0 +1,5 @@
+1 -> tüm sekmelere uygulamayı kapat butonu
+2 -> barkod kısmı test edilecek okuyucu gerekli
+3 -> ürünler sepette gösterilecek toplam fiyat gösteriliyor mu kontrol edilecek
+4 -> log kayıtları halledilecek
+5 -> satıştan sonra birden fazla satılan ürünlerin stoktan düşmesi (genel olarak stoktan düşülmedi)
