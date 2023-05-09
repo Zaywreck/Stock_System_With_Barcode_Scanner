@@ -8,7 +8,8 @@ namespace Guven_Barkod_BackEnd.DAL.mapping
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.HasKey(p => p.Barcode_ID);
+            builder.HasKey(p => p.Id);
+            builder.Property(p => p.Barcode_ID);
             builder.Property(p => p.Product_Name).IsRequired();
             builder.Property(p => p.Product_Model).IsRequired();
             builder.Property(p => p.Product_Color).IsRequired();

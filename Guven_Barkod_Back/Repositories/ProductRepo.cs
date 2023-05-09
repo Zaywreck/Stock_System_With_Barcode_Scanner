@@ -9,7 +9,7 @@ namespace Guven_Barkod_BackEnd.Repositories
         public DbSet<Product> Products { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\ProjectModels;Initial Catalog=Barkod;Integrated Security=True;Encrypt=False;");
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BarkodV2;Integrated Security=True;Encrypt=False;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

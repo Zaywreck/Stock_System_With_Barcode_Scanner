@@ -4,7 +4,7 @@ using Guven_Barkod_BackEnd.Repositories;
 
 namespace Guven_Barkod_BackEnd.Services
 {
-    public class ProductService : IProductService
+    public class ProductService
     {
         private readonly ProductRepo _context;
         public ProductService()
@@ -28,12 +28,12 @@ namespace Guven_Barkod_BackEnd.Services
             return _context.Products.ToList();
         }
 
-        public Product GetProductById(int id)
+        public Product GetProductById(string id)
         {
             return _context.Products.FirstOrDefault(p => p.Barcode_ID == id);
         }
 
-        public Product UpdateProduct(int id, Product product)
+        public Product UpdateProduct(string id, Product product)
         {
             var existingProduct = _context.Products.FirstOrDefault(p => p.Barcode_ID == id);
             if (existingProduct != null)

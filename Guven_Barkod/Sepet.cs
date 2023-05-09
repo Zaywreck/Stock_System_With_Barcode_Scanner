@@ -29,19 +29,19 @@ namespace Guven_Barkod
         }
         private void MySerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            SerialPort sp = (SerialPort)sender;
-            string data = sp.ReadExisting(); // barkod numarası
+            //SerialPort sp = (SerialPort)sender;
+            //string data = sp.ReadExisting(); // barkod numarası
 
-            BeginInvoke((MethodInvoker)(() =>
-            {
-                var date = DateTime.Now;
-                textBox2.AppendText(data);
-            }));
+            //BeginInvoke((MethodInvoker)(() =>
+            //{
+            //    var date = DateTime.Now;
+            //    textBox2.AppendText(data);
+            //}));
 
-            var prd = productService.GetProductById(data);
-            products.Add(prd);
-            dataGridView1.DataSource = products;
-            textBox1.Text = products.Sum(x=>x.Product_Price).ToString();
+            //var prd = productService.GetProductById(data);
+            //products.Add(prd);
+            //dataGridView1.DataSource = products;
+            //textBox1.Text = products.Sum(x=>x.Product_Price).ToString();
         }
 
         private void Form2_Load(object sender, EventArgs e)
