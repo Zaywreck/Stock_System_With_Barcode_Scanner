@@ -25,5 +25,10 @@
             Product_Size = product_Size ?? throw new ArgumentNullException(nameof(product_Size));
             Product_Price = product_Price;
         }
+
+        public override string? ToString()
+        {
+            return Product_Name;
+        }
     }
 }

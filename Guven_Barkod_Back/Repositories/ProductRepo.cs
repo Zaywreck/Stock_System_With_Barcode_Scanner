@@ -6,6 +6,7 @@ namespace Guven_Barkod_BackEnd.Repositories
 {
     public class ProductRepo : DbContext
     {
+
         public DbSet<Product> Products { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
