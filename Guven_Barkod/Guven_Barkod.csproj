@@ -14,10 +14,14 @@
 		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	 </PackageReference>
 	<PackageReference Include="System.IO.Ports" Version="7.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Guven_Barkod_Back\Guven_Barkod_BackEnd.csproj" />
+    <ProjectReference Include="..\Helpers\Helpers.csproj" />
   </ItemGroup>
 
 </Project>

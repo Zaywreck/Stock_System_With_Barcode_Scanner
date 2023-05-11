@@ -40,6 +40,7 @@
             button4 = new Button();
             textBox2 = new TextBox();
             label3 = new Label();
+            btn_Remove_Product = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)form1BindingSource).BeginInit();
             SuspendLayout();
@@ -77,12 +78,14 @@
             button1.TabIndex = 4;
             button1.Text = "ONAYLA";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(256, 65);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(471, 325);
             dataGridView1.TabIndex = 5;
@@ -121,7 +124,7 @@
             textBox2.Location = new Point(32, 68);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(133, 23);
-            textBox2.TabIndex = 9;
+            textBox2.TabIndex = 0;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label3
@@ -133,11 +136,22 @@
             label3.TabIndex = 10;
             label3.Text = "Barkod No";
             // 
+            // btn_Remove_Product
+            // 
+            btn_Remove_Product.Location = new Point(983, 255);
+            btn_Remove_Product.Name = "btn_Remove_Product";
+            btn_Remove_Product.Size = new Size(92, 70);
+            btn_Remove_Product.TabIndex = 11;
+            btn_Remove_Product.Text = "Ürün Çıkar";
+            btn_Remove_Product.UseVisualStyleBackColor = true;
+            btn_Remove_Product.Click += btn_Remove_Product_Click;
+            // 
             // Sepet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1153, 482);
+            Controls.Add(btn_Remove_Product);
             Controls.Add(label3);
             Controls.Add(textBox2);
             Controls.Add(button4);
@@ -169,5 +183,6 @@
         private Button button4;
         private TextBox textBox2;
         private Label label3;
+        private Button btn_Remove_Product;
     }
 }
