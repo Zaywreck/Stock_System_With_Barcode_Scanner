@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Fiyat = new Label();
+            PPrice_lbl = new Label();
             Product_Price_txt = new TextBox();
             Product_Quantity_txt = new TextBox();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            PQuantity_lbl = new Label();
+            PSize_lbl = new Label();
+            PColor_lbl = new Label();
+            PModel_lbl = new Label();
+            PName_lbl = new Label();
+            Barkod_lbl = new Label();
             Barcode_No_txt = new TextBox();
             Product_Color_txt = new TextBox();
             Product_Name_txt = new TextBox();
             Product_model_txt = new TextBox();
             Product_Size_txt = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            btn_Update = new Button();
+            btn_Envanter = new Button();
+            btn_Close = new Button();
             SuspendLayout();
             // 
-            // Fiyat
+            // PPrice_lbl
             // 
-            Fiyat.AutoSize = true;
-            Fiyat.Location = new Point(466, 335);
-            Fiyat.Name = "Fiyat";
-            Fiyat.Size = new Size(32, 15);
-            Fiyat.TabIndex = 30;
-            Fiyat.Text = "Fiyat";
+            PPrice_lbl.AutoSize = true;
+            PPrice_lbl.Location = new Point(466, 335);
+            PPrice_lbl.Name = "PPrice_lbl";
+            PPrice_lbl.Size = new Size(32, 15);
+            PPrice_lbl.TabIndex = 30;
+            PPrice_lbl.Text = "Fiyat";
             // 
             // Product_Price_txt
             // 
@@ -69,59 +70,59 @@
             Product_Quantity_txt.Size = new Size(100, 23);
             Product_Quantity_txt.TabIndex = 28;
             // 
-            // label6
+            // PQuantity_lbl
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(431, 292);
-            label6.Name = "label6";
-            label6.Size = new Size(67, 15);
-            label6.TabIndex = 27;
-            label6.Text = "Ürün Adedi";
+            PQuantity_lbl.AutoSize = true;
+            PQuantity_lbl.Location = new Point(431, 292);
+            PQuantity_lbl.Name = "PQuantity_lbl";
+            PQuantity_lbl.Size = new Size(67, 15);
+            PQuantity_lbl.TabIndex = 27;
+            PQuantity_lbl.Text = "Ürün Adedi";
             // 
-            // label5
+            // PSize_lbl
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(426, 252);
-            label5.Name = "label5";
-            label5.Size = new Size(72, 15);
-            label5.TabIndex = 26;
-            label5.Text = "Ürün Bedeni";
+            PSize_lbl.AutoSize = true;
+            PSize_lbl.Location = new Point(426, 252);
+            PSize_lbl.Name = "PSize_lbl";
+            PSize_lbl.Size = new Size(72, 15);
+            PSize_lbl.TabIndex = 26;
+            PSize_lbl.Text = "Ürün Bedeni";
             // 
-            // label4
+            // PColor_lbl
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(432, 208);
-            label4.Name = "label4";
-            label4.Size = new Size(66, 15);
-            label4.TabIndex = 25;
-            label4.Text = "Ürün Rengi";
+            PColor_lbl.AutoSize = true;
+            PColor_lbl.Location = new Point(432, 208);
+            PColor_lbl.Name = "PColor_lbl";
+            PColor_lbl.Size = new Size(66, 15);
+            PColor_lbl.TabIndex = 25;
+            PColor_lbl.Text = "Ürün Rengi";
             // 
-            // label3
+            // PModel_lbl
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(425, 163);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 15);
-            label3.TabIndex = 24;
-            label3.Text = "Ürün Modeli";
+            PModel_lbl.AutoSize = true;
+            PModel_lbl.Location = new Point(425, 163);
+            PModel_lbl.Name = "PModel_lbl";
+            PModel_lbl.Size = new Size(73, 15);
+            PModel_lbl.TabIndex = 24;
+            PModel_lbl.Text = "Ürün Modeli";
             // 
-            // label2
+            // PName_lbl
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(444, 120);
-            label2.Name = "label2";
-            label2.Size = new Size(54, 15);
-            label2.TabIndex = 23;
-            label2.Text = "Ürün Adı";
+            PName_lbl.AutoSize = true;
+            PName_lbl.Location = new Point(444, 120);
+            PName_lbl.Name = "PName_lbl";
+            PName_lbl.Size = new Size(54, 15);
+            PName_lbl.TabIndex = 23;
+            PName_lbl.Text = "Ürün Adı";
             // 
-            // label1
+            // Barkod_lbl
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(435, 75);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 22;
-            label1.Text = "Barkod No";
+            Barkod_lbl.AutoSize = true;
+            Barkod_lbl.Location = new Point(435, 75);
+            Barkod_lbl.Name = "Barkod_lbl";
+            Barkod_lbl.Size = new Size(63, 15);
+            Barkod_lbl.TabIndex = 22;
+            Barkod_lbl.Text = "Barkod No";
             // 
             // Barcode_No_txt
             // 
@@ -158,71 +159,83 @@
             Product_Size_txt.Size = new Size(100, 23);
             Product_Size_txt.TabIndex = 17;
             // 
-            // button1
+            // btn_Update
             // 
-            button1.Location = new Point(504, 380);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 54);
-            button1.TabIndex = 31;
-            button1.Text = "Onayla";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btn_Update.Location = new Point(504, 380);
+            btn_Update.Name = "btn_Update";
+            btn_Update.Size = new Size(100, 54);
+            btn_Update.TabIndex = 31;
+            btn_Update.Text = "Onayla";
+            btn_Update.UseVisualStyleBackColor = true;
+            btn_Update.Click += Update_Click;
             // 
-            // button2
+            // btn_Envanter
             // 
-            button2.Location = new Point(222, 380);
-            button2.Name = "button2";
-            button2.Size = new Size(96, 54);
-            button2.TabIndex = 32;
-            button2.Text = "Envanter";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btn_Envanter.Location = new Point(222, 380);
+            btn_Envanter.Name = "btn_Envanter";
+            btn_Envanter.Size = new Size(96, 54);
+            btn_Envanter.TabIndex = 32;
+            btn_Envanter.Text = "Envanter";
+            btn_Envanter.UseVisualStyleBackColor = true;
+            btn_Envanter.Click += Envanter_Click;
             // 
-            // Form4
+            // btn_Close
+            // 
+            btn_Close.Location = new Point(990, 28);
+            btn_Close.Name = "btn_Close";
+            btn_Close.Size = new Size(135, 34);
+            btn_Close.TabIndex = 33;
+            btn_Close.Text = "Uygulamayı Kapat";
+            btn_Close.UseVisualStyleBackColor = true;
+            btn_Close.Click += btn_Close_Click;
+            // 
+            // Guncelleme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1170, 562);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(Fiyat);
+            Controls.Add(btn_Close);
+            Controls.Add(btn_Envanter);
+            Controls.Add(btn_Update);
+            Controls.Add(PPrice_lbl);
             Controls.Add(Product_Price_txt);
             Controls.Add(Product_Quantity_txt);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(PQuantity_lbl);
+            Controls.Add(PSize_lbl);
+            Controls.Add(PColor_lbl);
+            Controls.Add(PModel_lbl);
+            Controls.Add(PName_lbl);
+            Controls.Add(Barkod_lbl);
             Controls.Add(Barcode_No_txt);
             Controls.Add(Product_Color_txt);
             Controls.Add(Product_Name_txt);
             Controls.Add(Product_model_txt);
             Controls.Add(Product_Size_txt);
-            Name = "Form4";
+            Name = "Guncelleme";
             Text = "Form4";
-            Load += Form4_Load;
+            Load += Update_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label Fiyat;
+        private Label PPrice_lbl;
         private TextBox Product_Price_txt;
         private TextBox Product_Quantity_txt;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Label PQuantity_lbl;
+        private Label PSize_lbl;
+        private Label PColor_lbl;
+        private Label PModel_lbl;
+        private Label PName_lbl;
+        private Label Barkod_lbl;
         private TextBox Barcode_No_txt;
         private TextBox Product_Color_txt;
         private TextBox Product_Name_txt;
         private TextBox Product_model_txt;
         private TextBox Product_Size_txt;
-        private Button button1;
-        private Button button2;
+        private Button btn_Update;
+        private Button btn_Envanter;
+        private Button btn_Close;
     }
 }

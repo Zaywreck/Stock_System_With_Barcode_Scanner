@@ -1,5 +1,4 @@
 ﻿using Guven_Barkod_BackEnd.Services;
-using System.IO.Ports;
 namespace Guven_Barkod
 {
     public partial class Envanter : Form
@@ -10,35 +9,35 @@ namespace Guven_Barkod
         }
         private void updateData()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = new ProductService().GetAllProducts();
-            dataGridView1.Refresh();
+            Inventory_dgw.DataSource = null;
+            Inventory_dgw.DataSource = new ProductService().GetAllProducts();
+            Inventory_dgw.Refresh();
 
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Envanter_Load(object sender, EventArgs e)
         {
             this.MinimumSize = new Size(1200, 640);
-            dataGridView1.DataSource = new ProductService().GetAllProducts();
+            Inventory_dgw.DataSource = new ProductService().GetAllProducts();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Urun_Ekleme_Click(object sender, EventArgs e)
         {
             var ms_Ekleme = new Ms_Ekleme();
             ms_Ekleme.Show();
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Sepet_Click(object sender, EventArgs e)
         {
             var sepet = new Sepet();
             sepet.Show(); this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Product_Remove_Click(object sender, EventArgs e)
         {
             // Get the value of selected product's barcode id
-            string? selectedProductId = dataGridView1.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
+            string? selectedProductId = Inventory_dgw.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
             // Calling the service and finding the product with designed methods
             var productService = new ProductService();
             var tproduct = productService.GetProductById(selectedProductId);
@@ -54,9 +53,9 @@ namespace Guven_Barkod
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Product_Quantity_Increase_Click(object sender, EventArgs e)
         {
-            string? selectedProductId = dataGridView1.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
+            string? selectedProductId = Inventory_dgw.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
             var productService = new ProductService();
             var selectedProduct = productService.GetProductById(selectedProductId);
             if (selectedProduct != null)
@@ -71,9 +70,9 @@ namespace Guven_Barkod
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Product_Quantity_Decrease_Click(object sender, EventArgs e)
         {
-            string? selectedProductId = dataGridView1.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
+            string? selectedProductId = Inventory_dgw.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
             var productService = new ProductService();
             var selectedProduct = productService.GetProductById(selectedProductId);
             if (selectedProduct != null)
@@ -88,12 +87,24 @@ namespace Guven_Barkod
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Product_Update_Click(object sender, EventArgs e)
         {
-            string? selectedProductId = dataGridView1.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
-            var form4 = new Guncelleme(selectedProductId);
-            form4.Show();
+            string? selectedProductId = Inventory_dgw.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
+            var guncelleme = new Guncelleme(selectedProductId);
+            guncelleme.Show();
             this.Close();
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Emin misiniz?", "Evet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

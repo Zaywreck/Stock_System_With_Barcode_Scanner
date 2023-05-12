@@ -12,7 +12,7 @@ namespace Guven_Barkod
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Update_Click(object sender, EventArgs e)
         {
             // Update Product
             var Repo = new ProductService();
@@ -29,14 +29,14 @@ namespace Guven_Barkod
             Repo.UpdateProduct(Barcode_No_txt.Text, product);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Envanter_Click(object sender, EventArgs e)
         {
             var envanter = new Envanter();
             envanter.Show();
             this.Close();
         }
 
-        private void Form4_Load(object sender, EventArgs e)
+        private void Update_Load(object sender, EventArgs e)
         {
             var service = new ProductService();
             var product = service.GetProductById(_selectedProductId);
@@ -50,6 +50,18 @@ namespace Guven_Barkod
 
 
             this.MinimumSize = new Size(1200, 640);
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Emin misiniz?", "Evet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

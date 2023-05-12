@@ -28,126 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            label1 = new Label();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            Inventory_dgw = new DataGridView();
+            btn_Sepet = new Button();
+            btn_Urun_Ekleme = new Button();
+            Envanter_lbl = new Label();
+            btn_Product_remove = new Button();
+            btn_Product_update = new Button();
+            btn_Quantity_add = new Button();
+            btn_Quantity_remove = new Button();
+            btn_Close = new Button();
+            ((System.ComponentModel.ISupportInitialize)Inventory_dgw).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // Inventory_dgw
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(30, 66);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(859, 403);
-            dataGridView1.TabIndex = 0;
+            Inventory_dgw.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Inventory_dgw.Location = new Point(30, 66);
+            Inventory_dgw.Name = "Inventory_dgw";
+            Inventory_dgw.RowTemplate.Height = 25;
+            Inventory_dgw.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Inventory_dgw.Size = new Size(859, 403);
+            Inventory_dgw.TabIndex = 0;
             // 
-            // button1
+            // btn_Sepet
             // 
-            button1.Location = new Point(1000, 382);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 58);
-            button1.TabIndex = 1;
-            button1.Text = "Satış Ekranı";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btn_Sepet.Location = new Point(1000, 382);
+            btn_Sepet.Name = "btn_Sepet";
+            btn_Sepet.Size = new Size(94, 58);
+            btn_Sepet.TabIndex = 1;
+            btn_Sepet.Text = "Satış Ekranı";
+            btn_Sepet.UseVisualStyleBackColor = true;
+            btn_Sepet.Click += Sepet_Click;
             // 
-            // button2
+            // btn_Urun_Ekleme
             // 
-            button2.Location = new Point(1000, 307);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 58);
-            button2.TabIndex = 2;
-            button2.Text = "Ürün ekleme";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btn_Urun_Ekleme.Location = new Point(1000, 307);
+            btn_Urun_Ekleme.Name = "btn_Urun_Ekleme";
+            btn_Urun_Ekleme.Size = new Size(94, 58);
+            btn_Urun_Ekleme.TabIndex = 2;
+            btn_Urun_Ekleme.Text = "Ürün ekleme";
+            btn_Urun_Ekleme.UseVisualStyleBackColor = true;
+            btn_Urun_Ekleme.Click += Urun_Ekleme_Click;
             // 
-            // label1
+            // Envanter_lbl
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(432, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Envanter";
+            Envanter_lbl.AutoSize = true;
+            Envanter_lbl.Location = new Point(432, 32);
+            Envanter_lbl.Name = "Envanter_lbl";
+            Envanter_lbl.Size = new Size(53, 15);
+            Envanter_lbl.TabIndex = 3;
+            Envanter_lbl.Text = "Envanter";
             // 
-            // button3
+            // btn_Product_remove
             // 
-            button3.Location = new Point(1000, 159);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 56);
-            button3.TabIndex = 4;
-            button3.Text = "Ürün Sil";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btn_Product_remove.Location = new Point(1000, 159);
+            btn_Product_remove.Name = "btn_Product_remove";
+            btn_Product_remove.Size = new Size(94, 56);
+            btn_Product_remove.TabIndex = 4;
+            btn_Product_remove.Text = "Ürün Sil";
+            btn_Product_remove.UseVisualStyleBackColor = true;
+            btn_Product_remove.Click += Product_Remove_Click;
             // 
-            // button4
+            // btn_Product_update
             // 
-            button4.Location = new Point(1000, 232);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 58);
-            button4.TabIndex = 5;
-            button4.Text = "Ürün Güncelle";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btn_Product_update.Location = new Point(1000, 232);
+            btn_Product_update.Name = "btn_Product_update";
+            btn_Product_update.Size = new Size(94, 58);
+            btn_Product_update.TabIndex = 5;
+            btn_Product_update.Text = "Ürün Güncelle";
+            btn_Product_update.UseVisualStyleBackColor = true;
+            btn_Product_update.Click += Product_Update_Click;
             // 
-            // button5
+            // btn_Quantity_add
             // 
-            button5.Location = new Point(1000, 72);
-            button5.Name = "button5";
-            button5.Size = new Size(94, 23);
-            button5.TabIndex = 6;
-            button5.Text = "Miktar artır";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btn_Quantity_add.Location = new Point(1000, 72);
+            btn_Quantity_add.Name = "btn_Quantity_add";
+            btn_Quantity_add.Size = new Size(94, 23);
+            btn_Quantity_add.TabIndex = 6;
+            btn_Quantity_add.Text = "Miktar artır";
+            btn_Quantity_add.UseVisualStyleBackColor = true;
+            btn_Quantity_add.Click += Product_Quantity_Increase_Click;
             // 
-            // button6
+            // btn_Quantity_remove
             // 
-            button6.Location = new Point(1000, 112);
-            button6.Name = "button6";
-            button6.Size = new Size(94, 23);
-            button6.TabIndex = 7;
-            button6.Text = "Miktar azalt";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            btn_Quantity_remove.Location = new Point(1000, 112);
+            btn_Quantity_remove.Name = "btn_Quantity_remove";
+            btn_Quantity_remove.Size = new Size(94, 23);
+            btn_Quantity_remove.TabIndex = 7;
+            btn_Quantity_remove.Text = "Miktar azalt";
+            btn_Quantity_remove.UseVisualStyleBackColor = true;
+            btn_Quantity_remove.Click += Product_Quantity_Decrease_Click;
             // 
-            // Form3
+            // btn_Close
+            // 
+            btn_Close.Location = new Point(990, 28);
+            btn_Close.Name = "btn_Close";
+            btn_Close.Size = new Size(135, 34);
+            btn_Close.TabIndex = 34;
+            btn_Close.Text = "Uygulamayı Kapat";
+            btn_Close.UseVisualStyleBackColor = true;
+            btn_Close.Click += btn_Close_Click;
+            // 
+            // Envanter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1158, 558);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
-            Name = "Form3";
+            Controls.Add(btn_Close);
+            Controls.Add(btn_Quantity_remove);
+            Controls.Add(btn_Quantity_add);
+            Controls.Add(btn_Product_update);
+            Controls.Add(btn_Product_remove);
+            Controls.Add(Envanter_lbl);
+            Controls.Add(btn_Urun_Ekleme);
+            Controls.Add(btn_Sepet);
+            Controls.Add(Inventory_dgw);
+            Name = "Envanter";
             Text = "Form3";
-            Load += Form3_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Envanter_Load;
+            ((System.ComponentModel.ISupportInitialize)Inventory_dgw).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Label label1;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private DataGridView Inventory_dgw;
+        private Button btn_Sepet;
+        private Button btn_Urun_Ekleme;
+        private Label Envanter_lbl;
+        private Button btn_Product_remove;
+        private Button btn_Product_update;
+        private Button btn_Quantity_add;
+        private Button btn_Quantity_remove;
+        private Button btn_Close;
     }
 }

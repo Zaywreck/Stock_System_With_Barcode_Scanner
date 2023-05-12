@@ -18,27 +18,27 @@ namespace Guven_Barkod
         }
 
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Cart_Load(object sender, EventArgs e)
         {
             this.MinimumSize = new Size(1200, 640);
-            textBox2.Focus();
+            Barcode_txt_box.Focus();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_productAdding_click(object sender, EventArgs e)
         {
-            var form1 = new Ms_Ekleme();
-            form1.Show();
+            var ms_ekleme = new Ms_Ekleme();
+            ms_ekleme.Show();
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Envanter_Sayfası_Click(object sender, EventArgs e)
         {
-            var form3 = new Envanter();
-            form3.Show();
+            var envanter = new Envanter();
+            envanter.Show();
             this.Close();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void eTextChange_Scanner(object sender, EventArgs e)
         {
             if (isHandlingEvent)
             {
@@ -47,9 +47,9 @@ namespace Guven_Barkod
             isHandlingEvent = true;
             try
             {
-                if (textBox2.Text.Length >= 6)
+                if (Barcode_txt_box.Text.Length >= 6)
                 {
-                    var product = productService.GetProductById(textBox2.Text);
+                    var product = productService.GetProductById(Barcode_txt_box.Text);
                     var existingItem = products.FirstOrDefault(item => item.Product.Id == product.Id);
                     if (existingItem != null)
                     {
@@ -66,9 +66,8 @@ namespace Guven_Barkod
                         };
                         products.Add(cartItem);
                     }
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource = products;
-                    textBox2.Text = string.Empty;
+                    RefreshDgw();
+                    Barcode_txt_box.Text = string.Empty;
                 }
             }
             finally
@@ -79,25 +78,25 @@ namespace Guven_Barkod
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Sell_Click(object sender, EventArgs e)
         {
             try
             {
-                CreateFile createFile = new CreateFile(cartItems:products);
+                CreateFile createFile = new CreateFile(cartItems: products);
                 createFile.createLog();
-                
+
 
             }
             catch (Exception)
             {
                 MessageBox.Show("Bir hatayla karşılaşıldı!");
             }
-            finally 
+            finally
             {
 
                 products.Clear();
                 RefreshDgw();
-            
+
             }
         }
 
@@ -108,23 +107,24 @@ namespace Guven_Barkod
             {
                 if (products.Count > 0)
                 {
-                    string? selectedProductBarcodeId = dataGridView1.SelectedRows[0].Cells["Barcode_Id"].Value.ToString();
+                    string? selectedProductBarcodeId = Cart_dgw.SelectedRows[0].Cells["Barcode_Id"].Value.ToString();
                     var existingItem = products.FirstOrDefault(item => item.Product.Barcode_ID == selectedProductBarcodeId);
-                    if (existingItem.Quantity>1)
+                    if (existingItem.Quantity > 1)
                     {
                         existingItem.Quantity -= 1;
                     }
-                    else if (existingItem.Quantity ==1) {
+                    else if (existingItem.Quantity == 1)
+                    {
                         products.Remove(existingItem);
                         MessageBox.Show($"{existingItem.Barcode_Id} ürün çıkarıldı.");
-                        
+
                     }
                     else
                     {
                         MessageBox.Show("Bir hatayla karşılaşıldı");
                     }
 
-                  
+
                 }
                 else
                 {
@@ -138,7 +138,7 @@ namespace Guven_Barkod
             finally
             {
                 RefreshDgw();
-                textBox2.Focus();
+                Barcode_txt_box.Focus();
             }
 
 
@@ -149,8 +149,20 @@ namespace Guven_Barkod
 
         private void RefreshDgw()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = products;
+            Cart_dgw.DataSource = null;
+            Cart_dgw.DataSource = products;
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Emin misiniz?", "Evet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

@@ -10,13 +10,13 @@ namespace Guven_Barkod
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Envanter_Click(object sender, EventArgs e)
         {
             var envanter = new Envanter();
             envanter.Show();
             this.Hide();
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void Product_Add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Barcode_No_txt.Text) ||
             string.IsNullOrEmpty(Product_Name_txt.Text) ||
@@ -46,16 +46,28 @@ namespace Guven_Barkod
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Sepet_Click(object sender, EventArgs e)
         {
             var sepet = new Sepet();
             sepet.Show();
             this.Hide();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Ms_Ekleme_Load(object sender, EventArgs e)
         {
             this.MinimumSize = new Size(1200, 640);
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Emin misiniz?", "Evet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

@@ -29,116 +29,107 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
+            Sepet_lbl = new Label();
+            Toplam_txt_box = new TextBox();
+            Toplam_lbl = new Label();
+            btn_Onayla = new Button();
+            Cart_dgw = new DataGridView();
             form1BindingSource = new BindingSource(components);
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            textBox2 = new TextBox();
-            label3 = new Label();
+            btn_Urun_Ekleme = new Button();
+            btn_Envanter = new Button();
+            Barcode_txt_box = new TextBox();
+            Barkod_lbl = new Label();
             btn_Remove_Product = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btn_Close = new Button();
+            ((System.ComponentModel.ISupportInitialize)Cart_dgw).BeginInit();
             ((System.ComponentModel.ISupportInitialize)form1BindingSource).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // Sepet_lbl
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(445, 47);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 1;
-            label1.Text = "SEPET";
+            Sepet_lbl.AutoSize = true;
+            Sepet_lbl.Location = new Point(445, 47);
+            Sepet_lbl.Name = "Sepet_lbl";
+            Sepet_lbl.Size = new Size(38, 15);
+            Sepet_lbl.TabIndex = 1;
+            Sepet_lbl.Text = "SEPET";
             // 
-            // textBox1
+            // Toplam_txt_box
             // 
-            textBox1.Location = new Point(810, 65);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 23);
-            textBox1.TabIndex = 2;
+            Toplam_txt_box.Location = new Point(810, 65);
+            Toplam_txt_box.Name = "Toplam_txt_box";
+            Toplam_txt_box.Size = new Size(133, 23);
+            Toplam_txt_box.TabIndex = 2;
             // 
-            // label2
+            // Toplam_lbl
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(751, 68);
-            label2.Name = "label2";
-            label2.Size = new Size(53, 15);
-            label2.TabIndex = 3;
-            label2.Text = "TOPLAM";
+            Toplam_lbl.AutoSize = true;
+            Toplam_lbl.Location = new Point(751, 68);
+            Toplam_lbl.Name = "Toplam_lbl";
+            Toplam_lbl.Size = new Size(53, 15);
+            Toplam_lbl.TabIndex = 3;
+            Toplam_lbl.Text = "TOPLAM";
             // 
-            // button1
+            // btn_Onayla
             // 
-            button1.Location = new Point(826, 164);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 70);
-            button1.TabIndex = 4;
-            button1.Text = "ONAYLA";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btn_Onayla.Location = new Point(826, 164);
+            btn_Onayla.Name = "btn_Onayla";
+            btn_Onayla.Size = new Size(92, 70);
+            btn_Onayla.TabIndex = 4;
+            btn_Onayla.Text = "ONAYLA";
+            btn_Onayla.UseVisualStyleBackColor = true;
+            btn_Onayla.Click += btn_Sell_Click;
             // 
-            // dataGridView1
+            // Cart_dgw
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(256, 65);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(471, 325);
-            dataGridView1.TabIndex = 5;
+            Cart_dgw.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Cart_dgw.Location = new Point(256, 65);
+            Cart_dgw.Name = "Cart_dgw";
+            Cart_dgw.ReadOnly = true;
+            Cart_dgw.RowTemplate.Height = 25;
+            Cart_dgw.Size = new Size(471, 325);
+            Cart_dgw.TabIndex = 5;
             // 
-            // button2
+            // btn_Urun_Ekleme
             // 
-            button2.Location = new Point(826, 253);
-            button2.Name = "button2";
-            button2.Size = new Size(92, 72);
-            button2.TabIndex = 6;
-            button2.Text = "Ürün Ekleme";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btn_Urun_Ekleme.Location = new Point(826, 253);
+            btn_Urun_Ekleme.Name = "btn_Urun_Ekleme";
+            btn_Urun_Ekleme.Size = new Size(92, 72);
+            btn_Urun_Ekleme.TabIndex = 6;
+            btn_Urun_Ekleme.Text = "Ürün Ekleme";
+            btn_Urun_Ekleme.UseVisualStyleBackColor = true;
+            btn_Urun_Ekleme.Click += btn_productAdding_click;
             // 
-            // button3
+            // btn_Envanter
             // 
-            button3.Location = new Point(826, 349);
-            button3.Name = "button3";
-            button3.Size = new Size(92, 62);
-            button3.TabIndex = 7;
-            button3.Text = "Envanter";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btn_Envanter.Location = new Point(826, 349);
+            btn_Envanter.Name = "btn_Envanter";
+            btn_Envanter.Size = new Size(92, 62);
+            btn_Envanter.TabIndex = 7;
+            btn_Envanter.Text = "Envanter";
+            btn_Envanter.UseVisualStyleBackColor = true;
+            btn_Envanter.Click += Envanter_Sayfası_Click;
             // 
-            // button4
+            // Barcode_txt_box
             // 
-            button4.Location = new Point(983, 164);
-            button4.Name = "button4";
-            button4.Size = new Size(92, 70);
-            button4.TabIndex = 8;
-            button4.Text = "Barkod Oku";
-            button4.UseVisualStyleBackColor = true;
+            Barcode_txt_box.Location = new Point(32, 68);
+            Barcode_txt_box.Name = "Barcode_txt_box";
+            Barcode_txt_box.Size = new Size(133, 23);
+            Barcode_txt_box.TabIndex = 0;
+            Barcode_txt_box.TextChanged += eTextChange_Scanner;
             // 
-            // textBox2
+            // Barkod_lbl
             // 
-            textBox2.Location = new Point(32, 68);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(133, 23);
-            textBox2.TabIndex = 0;
-            textBox2.TextChanged += textBox2_TextChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(60, 50);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 15);
-            label3.TabIndex = 10;
-            label3.Text = "Barkod No";
+            Barkod_lbl.AutoSize = true;
+            Barkod_lbl.Location = new Point(60, 50);
+            Barkod_lbl.Name = "Barkod_lbl";
+            Barkod_lbl.Size = new Size(63, 15);
+            Barkod_lbl.TabIndex = 10;
+            Barkod_lbl.Text = "Barkod No";
             // 
             // btn_Remove_Product
             // 
-            btn_Remove_Product.Location = new Point(983, 255);
+            btn_Remove_Product.Location = new Point(975, 164);
             btn_Remove_Product.Name = "btn_Remove_Product";
             btn_Remove_Product.Size = new Size(92, 70);
             btn_Remove_Product.TabIndex = 11;
@@ -146,43 +137,53 @@
             btn_Remove_Product.UseVisualStyleBackColor = true;
             btn_Remove_Product.Click += btn_Remove_Product_Click;
             // 
+            // btn_Close
+            // 
+            btn_Close.Location = new Point(990, 28);
+            btn_Close.Name = "btn_Close";
+            btn_Close.Size = new Size(135, 34);
+            btn_Close.TabIndex = 12;
+            btn_Close.Text = "Uygulamayı Kapat";
+            btn_Close.UseVisualStyleBackColor = true;
+            btn_Close.Click += btn_Close_Click;
+            // 
             // Sepet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1153, 482);
+            Controls.Add(btn_Close);
             Controls.Add(btn_Remove_Product);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            Controls.Add(Barkod_lbl);
+            Controls.Add(Barcode_txt_box);
+            Controls.Add(btn_Envanter);
+            Controls.Add(btn_Urun_Ekleme);
+            Controls.Add(Cart_dgw);
+            Controls.Add(btn_Onayla);
+            Controls.Add(Toplam_lbl);
+            Controls.Add(Toplam_txt_box);
+            Controls.Add(Sepet_lbl);
             Name = "Sepet";
             Text = "Form2";
-            Load += Form2_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Cart_Load;
+            ((System.ComponentModel.ISupportInitialize)Cart_dgw).EndInit();
             ((System.ComponentModel.ISupportInitialize)form1BindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label1;
-        private TextBox textBox1;
-        private Label label2;
-        private Button button1;
-        private DataGridView dataGridView1;
+        private Label Sepet_lbl;
+        private TextBox Toplam_txt_box;
+        private Label Toplam_lbl;
+        private Button btn_Onayla;
+        private DataGridView Cart_dgw;
         private BindingSource form1BindingSource;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private TextBox textBox2;
-        private Label label3;
+        private Button btn_Urun_Ekleme;
+        private Button btn_Envanter;
+        private TextBox Barcode_txt_box;
+        private Label Barkod_lbl;
         private Button btn_Remove_Product;
+        private Button btn_Close;
     }
 }
