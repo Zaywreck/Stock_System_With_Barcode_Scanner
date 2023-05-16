@@ -49,7 +49,6 @@ namespace Guven_Barkod
             {
                 if (Barcode_txt_box.Text.Length >= 6)
                 {
-                    double sum = 0;
                     var product = productService.GetProductById(Barcode_txt_box.Text);
                     if (product != null)
                     {
@@ -92,6 +91,21 @@ namespace Guven_Barkod
             {
                 CreateFile createFile = new CreateFile(cartItems: products);
                 createFile.createLog();
+                foreach (CartItem item in products)
+                {
+                    var prd = item.Product;
+                    var up = new Product
+                    {
+                        Id = prd.Id,
+                        Barcode_ID = prd.Barcode_ID,
+                        Product_Name = prd.Product_Name,
+                        Product_Model = prd.Product_Model,
+                        Product_Color = prd.Product_Color,
+                        Product_Price = prd.Product_Price,
+                        Product_Quantity = prd.Product_Quantity - item.Quantity
+                    };
+                    productService.UpdateProduct(prd.Barcode_ID, up);
+                }
             }
             catch (Exception)
             {
