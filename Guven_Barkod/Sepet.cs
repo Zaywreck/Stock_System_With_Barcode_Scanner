@@ -50,24 +50,31 @@ namespace Guven_Barkod
                 if (Barcode_txt_box.Text.Length >= 6)
                 {
                     var product = productService.GetProductById(Barcode_txt_box.Text);
-                    var existingItem = products.FirstOrDefault(item => item.Product.Id == product.Id);
-                    if (existingItem != null)
+                    if (product != null)
                     {
-                        existingItem.Quantity++;
+                        var existingItem = products.FirstOrDefault(item => item.Product.Id == product.Id);
+                        if (existingItem != null)
+                        {
+                            existingItem.Quantity++;
+                        }
+                        else
+                        {
+                            var cartItem = new CartItem
+                            {
+                                Product = product,
+                                Quantity = 1,
+                                Barcode_Id = product.Barcode_ID,
+
+                            };
+                            products.Add(cartItem);
+                        }
+                        RefreshDgw();
+                        Barcode_txt_box.Text = string.Empty;
                     }
                     else
                     {
-                        var cartItem = new CartItem
-                        {
-                            Product = product,
-                            Quantity = 1,
-                            Barcode_Id = product.Barcode_ID,
-
-                        };
-                        products.Add(cartItem);
+                        MessageBox.Show("Hatalı Barkod");
                     }
-                    RefreshDgw();
-                    Barcode_txt_box.Text = string.Empty;
                 }
             }
             finally

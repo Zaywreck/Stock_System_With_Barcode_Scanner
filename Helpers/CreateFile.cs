@@ -1,12 +1,10 @@
 ﻿using Guven_Barkod_BackEnd.Entities;
-
+using System.IO;
 namespace Helpers
 {
     
     public class CreateFile
     {
-
-           
         private static string systemDirectory = AppContext.BaseDirectory.Replace("bin\\Debug\\net6.0-windows10.0.19041.0\\", "");
 
         private static string filePath = $"{systemDirectory}\\files";
