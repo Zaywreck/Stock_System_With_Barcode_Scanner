@@ -49,25 +49,33 @@ namespace Guven_Barkod
             {
                 if (Barcode_txt_box.Text.Length >= 6)
                 {
+                    double sum = 0;
                     var product = productService.GetProductById(Barcode_txt_box.Text);
-                    var existingItem = products.FirstOrDefault(item => item.Product.Id == product.Id);
-                    if (existingItem != null)
+                    if (product != null)
                     {
-                        existingItem.Quantity++;
+                        var existingItem = products.FirstOrDefault(item => item.Product.Id == product.Id);
+                        if (existingItem != null)
+                        {
+                            existingItem.Quantity++;
+                        }
+                        else
+                        {
+                            var cartItem = new CartItem
+                            {
+                                Product = product,
+                                Quantity = 1,
+                                Barcode_Id = product.Barcode_ID,
+
+                            };
+                            products.Add(cartItem);
+                        }
+                        RefreshDgw();
+                        Barcode_txt_box.Text = string.Empty;
                     }
                     else
                     {
-                        var cartItem = new CartItem
-                        {
-                            Product = product,
-                            Quantity = 1,
-                            Barcode_Id = product.Barcode_ID,
-
-                        };
-                        products.Add(cartItem);
+                        MessageBox.Show("Hatalı Barkod");
                     }
-                    RefreshDgw();
-                    Barcode_txt_box.Text = string.Empty;
                 }
             }
             finally
@@ -84,8 +92,6 @@ namespace Guven_Barkod
             {
                 CreateFile createFile = new CreateFile(cartItems: products);
                 createFile.createLog();
-
-
             }
             catch (Exception)
             {
@@ -93,10 +99,8 @@ namespace Guven_Barkod
             }
             finally
             {
-
                 products.Clear();
                 RefreshDgw();
-
             }
         }
 
@@ -117,7 +121,6 @@ namespace Guven_Barkod
                     {
                         products.Remove(existingItem);
                         MessageBox.Show($"{existingItem.Barcode_Id} ürün çıkarıldı.");
-
                     }
                     else
                     {
@@ -140,19 +143,25 @@ namespace Guven_Barkod
                 RefreshDgw();
                 Barcode_txt_box.Focus();
             }
-
-
-
-
-
         }
 
         private void RefreshDgw()
         {
             Cart_dgw.DataSource = null;
             Cart_dgw.DataSource = products;
+            Calc_Cart_Sum(products);
         }
+        private double Calc_Cart_Sum(List<CartItem> cartItems)
+        {
+            double total = 0;
+            foreach (CartItem cartItem in cartItems)
+            {
+                total += cartItem.Quantity * cartItem.Product.Product_Price;
+            }
+            Toplam_txt_box.Text = total.ToString();
 
+            return total;
+        }
         private void btn_Close_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Emin misiniz?", "Evet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

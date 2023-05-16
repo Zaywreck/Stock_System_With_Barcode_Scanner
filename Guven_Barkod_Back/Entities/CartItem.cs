@@ -9,7 +9,7 @@
 
         public override string ToString()
         {
-            return $"Ürün Adı:{Product.Product_Name} || Satış Miktari:{Quantity} || Toplam Fiyat: {Quantity*Product.Product_Price}";
+            return $"Ürün Adı:{Product.Product_Name} || Satış Miktari:{Quantity} || Toplam Fiyat: {Quantity*Product.Product_Price} || Satış Saati:  {date.Hour}:{date.Minute}";
         }
     }
 }
