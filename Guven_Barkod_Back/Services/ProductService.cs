@@ -43,6 +43,7 @@ namespace Guven_Barkod_BackEnd.Services
                 existingProduct.Product_Color = product.Product_Color;
                 existingProduct.Product_Size = product.Product_Size;
                 existingProduct.Product_Price = product.Product_Price;
+                existingProduct.Product_Quantity = product.Product_Quantity;
                 _context.SaveChanges();
             }
             return existingProduct;

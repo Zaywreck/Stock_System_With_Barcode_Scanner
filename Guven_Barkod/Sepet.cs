@@ -91,8 +91,21 @@ namespace Guven_Barkod
             {
                 CreateFile createFile = new CreateFile(cartItems: products);
                 createFile.createLog();
-
-
+                foreach (CartItem item in products)
+                {
+                    var prd = item.Product;
+                    var up = new Product
+                    {
+                        Id = prd.Id,
+                        Barcode_ID = prd.Barcode_ID,
+                        Product_Name = prd.Product_Name,
+                        Product_Model = prd.Product_Model,
+                        Product_Color = prd.Product_Color,
+                        Product_Price = prd.Product_Price,
+                        Product_Quantity = prd.Product_Quantity - item.Quantity
+                    };
+                    productService.UpdateProduct(prd.Barcode_ID, up);
+                }
             }
             catch (Exception)
             {
@@ -100,10 +113,8 @@ namespace Guven_Barkod
             }
             finally
             {
-
                 products.Clear();
                 RefreshDgw();
-
             }
         }
 
@@ -124,7 +135,6 @@ namespace Guven_Barkod
                     {
                         products.Remove(existingItem);
                         MessageBox.Show($"{existingItem.Barcode_Id} ürün çıkarıldı.");
-
                     }
                     else
                     {
@@ -153,8 +163,19 @@ namespace Guven_Barkod
         {
             Cart_dgw.DataSource = null;
             Cart_dgw.DataSource = products;
+            Calc_Cart_Sum(products);
         }
+        private double Calc_Cart_Sum(List<CartItem> cartItems)
+        {
+            double total = 0;
+            foreach (CartItem cartItem in cartItems)
+            {
+                total += cartItem.Quantity * cartItem.Product.Product_Price;
+            }
+            Toplam_txt_box.Text = total.ToString();
 
+            return total;
+        }
         private void btn_Close_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Emin misiniz?", "Evet", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
