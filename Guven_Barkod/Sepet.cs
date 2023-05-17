@@ -147,11 +147,6 @@ namespace Guven_Barkod
                 RefreshDgw();
                 Barcode_txt_box.Focus();
             }
-
-
-
-
-
         }
 
         private void RefreshDgw()
