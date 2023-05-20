@@ -101,6 +101,7 @@ namespace Guven_Barkod
                         Product_Name = prd.Product_Name,
                         Product_Model = prd.Product_Model,
                         Product_Color = prd.Product_Color,
+                        Product_Size = prd.Product_Size,
                         Product_Price = prd.Product_Price,
                         Product_Quantity = prd.Product_Quantity - item.Quantity
                     };
