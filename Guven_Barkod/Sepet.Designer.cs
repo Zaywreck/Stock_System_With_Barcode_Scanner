@@ -41,6 +41,10 @@
             Barkod_lbl = new Label();
             btn_Remove_Product = new Button();
             btn_Close = new Button();
+            Customer_Name_Surname_txt = new TextBox();
+            Customer_PhoneNumber_txt = new TextBox();
+            lbl_Customer_Name_Surname = new Label();
+            lbl_Customer_PhoneNumber = new Label();
             ((System.ComponentModel.ISupportInitialize)Cart_dgw).BeginInit();
             ((System.ComponentModel.ISupportInitialize)form1BindingSource).BeginInit();
             SuspendLayout();
@@ -148,11 +152,47 @@
             btn_Close.UseVisualStyleBackColor = true;
             btn_Close.Click += btn_Close_Click;
             // 
+            // Customer_Name_Surname_txt
+            // 
+            Customer_Name_Surname_txt.Location = new Point(32, 135);
+            Customer_Name_Surname_txt.Name = "Customer_Name_Surname_txt";
+            Customer_Name_Surname_txt.Size = new Size(133, 23);
+            Customer_Name_Surname_txt.TabIndex = 13;
+            // 
+            // Customer_PhoneNumber_txt
+            // 
+            Customer_PhoneNumber_txt.Location = new Point(32, 189);
+            Customer_PhoneNumber_txt.Name = "Customer_PhoneNumber_txt";
+            Customer_PhoneNumber_txt.Size = new Size(133, 23);
+            Customer_PhoneNumber_txt.TabIndex = 14;
+            // 
+            // lbl_Customer_Name_Surname
+            // 
+            lbl_Customer_Name_Surname.AutoSize = true;
+            lbl_Customer_Name_Surname.Location = new Point(32, 117);
+            lbl_Customer_Name_Surname.Name = "lbl_Customer_Name_Surname";
+            lbl_Customer_Name_Surname.Size = new Size(106, 15);
+            lbl_Customer_Name_Surname.TabIndex = 15;
+            lbl_Customer_Name_Surname.Text = "Müşteri Adı Soyadı";
+            // 
+            // lbl_Customer_PhoneNumber
+            // 
+            lbl_Customer_PhoneNumber.AutoSize = true;
+            lbl_Customer_PhoneNumber.Location = new Point(32, 171);
+            lbl_Customer_PhoneNumber.Name = "lbl_Customer_PhoneNumber";
+            lbl_Customer_PhoneNumber.Size = new Size(142, 15);
+            lbl_Customer_PhoneNumber.TabIndex = 16;
+            lbl_Customer_PhoneNumber.Text = "Müşteri Telefon Numarası";
+            // 
             // Sepet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1153, 482);
+            Controls.Add(lbl_Customer_PhoneNumber);
+            Controls.Add(lbl_Customer_Name_Surname);
+            Controls.Add(Customer_PhoneNumber_txt);
+            Controls.Add(Customer_Name_Surname_txt);
             Controls.Add(btn_Close);
             Controls.Add(btn_Remove_Product);
             Controls.Add(Barkod_lbl);
@@ -186,5 +226,9 @@
         private Label Barkod_lbl;
         private Button btn_Remove_Product;
         private Button btn_Close;
+        private TextBox Customer_Name_Surname_txt;
+        private TextBox Customer_PhoneNumber_txt;
+        private Label lbl_Customer_Name_Surname;
+        private Label lbl_Customer_PhoneNumber;
     }
 }

@@ -64,7 +64,9 @@ namespace Guven_Barkod
                                 Product = product,
                                 Quantity = 1,
                                 Barcode_Id = product.Barcode_ID,
-                                Price = product.Product_Price
+                                Price = product.Product_Price,
+                                CustomerInfo = Customer_Name_Surname_txt.Text,
+                                CustomerPhoneNumber = Customer_PhoneNumber_txt.Text,
 
                             };
                             products.Add(cartItem);
