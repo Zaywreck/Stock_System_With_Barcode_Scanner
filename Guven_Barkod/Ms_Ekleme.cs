@@ -26,7 +26,8 @@ namespace Guven_Barkod
                 string.IsNullOrEmpty(Product_Color_txt.Text) ||
                 string.IsNullOrEmpty(Product_Size_txt.Text) ||
                 string.IsNullOrEmpty(Product_Quantity_txt.Text) ||
-                string.IsNullOrEmpty(Product_Price_txt.Text))
+                string.IsNullOrEmpty(Product_Price_txt.Text) ||
+                string.IsNullOrEmpty(Product_Purch_Price_txt.Text))
                 {
                     MessageBox.Show("Lütfen Boþ parametre býrakmayýnýz!");
                 }
@@ -42,7 +43,8 @@ namespace Guven_Barkod
                         Product_Color = Product_Color_txt.Text,
                         Product_Size = Product_Size_txt.Text,
                         Product_Quantity = int.Parse(Product_Quantity_txt.Text),
-                        Product_Price = int.Parse(Product_Price_txt.Text),
+                        Product_Price = double.Parse(Product_Price_txt.Text),
+                        Product_Purch_Price = double.Parse(Product_Purch_Price_txt.Text)
                     };
                     Repo.CreateProduct(product);
                 }
@@ -90,6 +92,7 @@ namespace Guven_Barkod
             Product_Quantity_txt.Text = string.Empty;
             Product_Size_txt.Text = string.Empty;
             Product_Price_txt.Text = string.Empty;
+            Product_Purch_Price_txt.Text = string.Empty;
         }
     }
 }

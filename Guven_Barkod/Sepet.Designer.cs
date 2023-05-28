@@ -56,15 +56,16 @@
             // 
             // Toplam_txt_box
             // 
-            Toplam_txt_box.Location = new Point(810, 65);
+            Toplam_txt_box.Font = new Font("Segoe UI", 50F, FontStyle.Regular, GraphicsUnit.Point);
+            Toplam_txt_box.Location = new Point(810, 62);
             Toplam_txt_box.Name = "Toplam_txt_box";
-            Toplam_txt_box.Size = new Size(133, 23);
+            Toplam_txt_box.Size = new Size(174, 96);
             Toplam_txt_box.TabIndex = 2;
             // 
             // Toplam_lbl
             // 
             Toplam_lbl.AutoSize = true;
-            Toplam_lbl.Location = new Point(751, 68);
+            Toplam_lbl.Location = new Point(751, 102);
             Toplam_lbl.Name = "Toplam_lbl";
             Toplam_lbl.Size = new Size(53, 15);
             Toplam_lbl.TabIndex = 3;

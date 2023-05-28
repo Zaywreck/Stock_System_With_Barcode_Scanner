@@ -64,6 +64,7 @@ namespace Guven_Barkod
                                 Product = product,
                                 Quantity = 1,
                                 Barcode_Id = product.Barcode_ID,
+                                Price = product.Product_Price
 
                             };
                             products.Add(cartItem);
@@ -103,6 +104,7 @@ namespace Guven_Barkod
                         Product_Color = prd.Product_Color,
                         Product_Size = prd.Product_Size,
                         Product_Price = prd.Product_Price,
+                        Product_Purch_Price = prd.Product_Purch_Price,
                         Product_Quantity = prd.Product_Quantity - item.Quantity
                     };
                     productService.UpdateProduct(prd.Barcode_ID, up);

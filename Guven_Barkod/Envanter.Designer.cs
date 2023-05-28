@@ -47,12 +47,12 @@
             Inventory_dgw.Name = "Inventory_dgw";
             Inventory_dgw.RowTemplate.Height = 25;
             Inventory_dgw.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Inventory_dgw.Size = new Size(859, 403);
+            Inventory_dgw.Size = new Size(966, 403);
             Inventory_dgw.TabIndex = 0;
             // 
             // btn_Sepet
             // 
-            btn_Sepet.Location = new Point(1000, 382);
+            btn_Sepet.Location = new Point(1121, 378);
             btn_Sepet.Name = "btn_Sepet";
             btn_Sepet.Size = new Size(94, 58);
             btn_Sepet.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // btn_Urun_Ekleme
             // 
-            btn_Urun_Ekleme.Location = new Point(1000, 307);
+            btn_Urun_Ekleme.Location = new Point(1121, 303);
             btn_Urun_Ekleme.Name = "btn_Urun_Ekleme";
             btn_Urun_Ekleme.Size = new Size(94, 58);
             btn_Urun_Ekleme.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             // btn_Product_remove
             // 
-            btn_Product_remove.Location = new Point(1000, 159);
+            btn_Product_remove.Location = new Point(1121, 155);
             btn_Product_remove.Name = "btn_Product_remove";
             btn_Product_remove.Size = new Size(94, 56);
             btn_Product_remove.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // btn_Product_update
             // 
-            btn_Product_update.Location = new Point(1000, 232);
+            btn_Product_update.Location = new Point(1121, 228);
             btn_Product_update.Name = "btn_Product_update";
             btn_Product_update.Size = new Size(94, 58);
             btn_Product_update.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             // btn_Quantity_add
             // 
-            btn_Quantity_add.Location = new Point(1000, 72);
+            btn_Quantity_add.Location = new Point(1121, 68);
             btn_Quantity_add.Name = "btn_Quantity_add";
             btn_Quantity_add.Size = new Size(94, 23);
             btn_Quantity_add.TabIndex = 6;
@@ -111,7 +111,7 @@
             // 
             // btn_Quantity_remove
             // 
-            btn_Quantity_remove.Location = new Point(1000, 112);
+            btn_Quantity_remove.Location = new Point(1121, 108);
             btn_Quantity_remove.Name = "btn_Quantity_remove";
             btn_Quantity_remove.Size = new Size(94, 23);
             btn_Quantity_remove.TabIndex = 7;
@@ -121,7 +121,7 @@
             // 
             // btn_Close
             // 
-            btn_Close.Location = new Point(990, 28);
+            btn_Close.Location = new Point(1111, 24);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(135, 34);
             btn_Close.TabIndex = 34;
@@ -133,7 +133,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1158, 558);
+            ClientSize = new Size(1302, 612);
             Controls.Add(btn_Close);
             Controls.Add(btn_Quantity_remove);
             Controls.Add(btn_Quantity_add);

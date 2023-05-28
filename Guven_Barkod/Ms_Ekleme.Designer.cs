@@ -46,6 +46,8 @@
             Product_Price_txt = new TextBox();
             PPrice_lbl = new Label();
             btn_Close = new Button();
+            Product_Purch_Price_txt = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // Product_Size_txt
@@ -146,7 +148,7 @@
             // 
             // btn_Envanter
             // 
-            btn_Envanter.Location = new Point(247, 359);
+            btn_Envanter.Location = new Point(242, 405);
             btn_Envanter.Name = "btn_Envanter";
             btn_Envanter.Size = new Size(101, 62);
             btn_Envanter.TabIndex = 12;
@@ -156,7 +158,7 @@
             // 
             // btn_Add_Product
             // 
-            btn_Add_Product.Location = new Point(515, 359);
+            btn_Add_Product.Location = new Point(515, 405);
             btn_Add_Product.Name = "btn_Add_Product";
             btn_Add_Product.Size = new Size(101, 62);
             btn_Add_Product.TabIndex = 13;
@@ -167,7 +169,7 @@
             // btn_Sepet
             // 
             btn_Sepet.AutoSize = true;
-            btn_Sepet.Location = new Point(775, 359);
+            btn_Sepet.Location = new Point(777, 405);
             btn_Sepet.Name = "btn_Sepet";
             btn_Sepet.Size = new Size(101, 62);
             btn_Sepet.TabIndex = 14;
@@ -185,11 +187,11 @@
             // PPrice_lbl
             // 
             PPrice_lbl.AutoSize = true;
-            PPrice_lbl.Location = new Point(478, 313);
+            PPrice_lbl.Location = new Point(448, 313);
             PPrice_lbl.Name = "PPrice_lbl";
-            PPrice_lbl.Size = new Size(32, 15);
+            PPrice_lbl.Size = new Size(62, 15);
             PPrice_lbl.TabIndex = 16;
-            PPrice_lbl.Text = "Fiyat";
+            PPrice_lbl.Text = "Satış Fiyatı";
             // 
             // btn_Close
             // 
@@ -201,11 +203,29 @@
             btn_Close.UseVisualStyleBackColor = true;
             btn_Close.Click += btn_Close_Click;
             // 
+            // Product_Purch_Price_txt
+            // 
+            Product_Purch_Price_txt.Location = new Point(516, 355);
+            Product_Purch_Price_txt.Name = "Product_Purch_Price_txt";
+            Product_Purch_Price_txt.Size = new Size(100, 23);
+            Product_Purch_Price_txt.TabIndex = 18;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(448, 358);
+            label1.Name = "label1";
+            label1.Size = new Size(57, 15);
+            label1.TabIndex = 19;
+            label1.Text = "Alış Fiyatı";
+            // 
             // Ms_Ekleme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1167, 569);
+            Controls.Add(label1);
+            Controls.Add(Product_Purch_Price_txt);
             Controls.Add(btn_Close);
             Controls.Add(PPrice_lbl);
             Controls.Add(Product_Price_txt);
@@ -251,5 +271,7 @@
         private TextBox Product_Price_txt;
         private Label PPrice_lbl;
         private Button btn_Close;
+        private TextBox Product_Purch_Price_txt;
+        private Label label1;
     }
 }
