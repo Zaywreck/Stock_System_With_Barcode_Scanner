@@ -90,7 +90,6 @@
             Cart_dgw.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Cart_dgw.Location = new Point(256, 65);
             Cart_dgw.Name = "Cart_dgw";
-            Cart_dgw.ReadOnly = true;
             Cart_dgw.RowTemplate.Height = 25;
             Cart_dgw.Size = new Size(471, 325);
             Cart_dgw.TabIndex = 5;

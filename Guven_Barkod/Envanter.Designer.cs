@@ -37,6 +37,13 @@
             btn_Quantity_add = new Button();
             btn_Quantity_remove = new Button();
             btn_Close = new Button();
+            sumOfPurchase_txt = new TextBox();
+            sumOfSell_txt = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            Aprox_Profit_txt = new TextBox();
+            label3 = new Label();
+            btn_Show_Values = new Button();
             ((System.ComponentModel.ISupportInitialize)Inventory_dgw).BeginInit();
             SuspendLayout();
             // 
@@ -129,11 +136,79 @@
             btn_Close.UseVisualStyleBackColor = true;
             btn_Close.Click += btn_Close_Click;
             // 
+            // sumOfPurchase_txt
+            // 
+            sumOfPurchase_txt.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
+            sumOfPurchase_txt.Location = new Point(79, 503);
+            sumOfPurchase_txt.Name = "sumOfPurchase_txt";
+            sumOfPurchase_txt.Size = new Size(209, 78);
+            sumOfPurchase_txt.TabIndex = 35;
+            // 
+            // sumOfSell_txt
+            // 
+            sumOfSell_txt.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
+            sumOfSell_txt.Location = new Point(467, 503);
+            sumOfSell_txt.Name = "sumOfSell_txt";
+            sumOfSell_txt.Size = new Size(209, 78);
+            sumOfSell_txt.TabIndex = 36;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(122, 485);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 15);
+            label1.TabIndex = 37;
+            label1.Text = "Toplam Alış Maliyeti";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(520, 485);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 15);
+            label2.TabIndex = 38;
+            label2.Text = "Toplam Satış Geliri";
+            // 
+            // Aprox_Profit_txt
+            // 
+            Aprox_Profit_txt.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
+            Aprox_Profit_txt.Location = new Point(767, 503);
+            Aprox_Profit_txt.Name = "Aprox_Profit_txt";
+            Aprox_Profit_txt.Size = new Size(209, 78);
+            Aprox_Profit_txt.TabIndex = 39;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(808, 485);
+            label3.Name = "label3";
+            label3.Size = new Size(111, 15);
+            label3.TabIndex = 40;
+            label3.Text = "Toplam Tahmini Kar";
+            // 
+            // btn_Show_Values
+            // 
+            btn_Show_Values.Location = new Point(1111, 503);
+            btn_Show_Values.Name = "btn_Show_Values";
+            btn_Show_Values.Size = new Size(94, 58);
+            btn_Show_Values.TabIndex = 41;
+            btn_Show_Values.Text = "Değerleri Göster";
+            btn_Show_Values.UseVisualStyleBackColor = true;
+            btn_Show_Values.Click += btn_Show_Values_Click;
+            // 
             // Envanter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1302, 612);
+            Controls.Add(btn_Show_Values);
+            Controls.Add(label3);
+            Controls.Add(Aprox_Profit_txt);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(sumOfSell_txt);
+            Controls.Add(sumOfPurchase_txt);
             Controls.Add(btn_Close);
             Controls.Add(btn_Quantity_remove);
             Controls.Add(btn_Quantity_add);
@@ -162,5 +237,12 @@
         private Button btn_Quantity_add;
         private Button btn_Quantity_remove;
         private Button btn_Close;
+        private TextBox sumOfPurchase_txt;
+        private TextBox sumOfSell_txt;
+        private Label label1;
+        private Label label2;
+        private TextBox Aprox_Profit_txt;
+        private Label label3;
+        private Button btn_Show_Values;
     }
 }
