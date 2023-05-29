@@ -28,6 +28,7 @@ namespace Guven_Barkod
                     Product_Size = Product_Size_txt.Text,
                     Product_Quantity = int.Parse(Product_Quantity_txt.Text),
                     Product_Price = double.Parse(Product_Price_txt.Text),
+                    Product_Purch_Price = double.Parse(Product_Purch_Price_txt.Text)
                 };
                 var updated = _productService.UpdateProduct(_selectedProductId, product);
             }
@@ -58,7 +59,7 @@ namespace Guven_Barkod
             Product_Size_txt.Text = product.Product_Size;
             Product_Quantity_txt.Text = product.Product_Quantity.ToString();
             Product_Price_txt.Text = product.Product_Price.ToString();
-
+            Product_Purch_Price_txt.Text = product.Product_Purch_Price.ToString();
 
             this.MinimumSize = new Size(1200, 640);
         }

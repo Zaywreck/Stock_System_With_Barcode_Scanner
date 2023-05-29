@@ -3,14 +3,17 @@ namespace Guven_Barkod
 {
     public partial class Envanter : Form
     {
+        private ProductService productService;
+        private bool passwordHandle = false;
         public Envanter()
         {
+            productService = new ProductService();
             InitializeComponent();
         }
         private void updateData()
         {
             Inventory_dgw.DataSource = null;
-            Inventory_dgw.DataSource = new ProductService().GetAllProducts();
+            Inventory_dgw.DataSource = productService.GetAllProducts();
             Inventory_dgw.Refresh();
 
         }
@@ -18,7 +21,20 @@ namespace Guven_Barkod
         private void Envanter_Load(object sender, EventArgs e)
         {
             this.MinimumSize = new Size(1200, 640);
-            Inventory_dgw.DataSource = new ProductService().GetAllProducts();
+            CalcTheTotalSellPurchProfit();
+            sumOfSell_txt.PasswordChar = '*';
+            sumOfPurchase_txt.PasswordChar = '*';
+            Aprox_Profit_txt.PasswordChar = '*';
+            Inventory_dgw.DataSource = productService.GetAllProducts();
+        }
+
+        private void CalcTheTotalSellPurchProfit()
+        {
+            var sumOfPurch = productService.GetAllProducts().Sum(product => product.Product_Purch_Price * product.Product_Quantity);
+            var sumOfSell = productService.GetAllProducts().Sum(product => product.Product_Price * product.Product_Quantity);
+            sumOfPurchase_txt.Text = sumOfPurch.ToString();
+            sumOfSell_txt.Text = sumOfSell.ToString();
+            Aprox_Profit_txt.Text = (sumOfSell - sumOfPurch).ToString();
         }
 
         private void Urun_Ekleme_Click(object sender, EventArgs e)
@@ -56,7 +72,6 @@ namespace Guven_Barkod
         private void Product_Quantity_Increase_Click(object sender, EventArgs e)
         {
             string? selectedProductId = Inventory_dgw.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
-            var productService = new ProductService();
             var selectedProduct = productService.GetProductById(selectedProductId);
             if (selectedProduct != null)
             {
@@ -73,7 +88,6 @@ namespace Guven_Barkod
         private void Product_Quantity_Decrease_Click(object sender, EventArgs e)
         {
             string? selectedProductId = Inventory_dgw.SelectedRows[0].Cells["Barcode_ID"].Value.ToString();
-            var productService = new ProductService();
             var selectedProduct = productService.GetProductById(selectedProductId);
             if (selectedProduct != null)
             {
@@ -104,6 +118,24 @@ namespace Guven_Barkod
             else
             {
                 return;
+            }
+        }
+
+        private void btn_Show_Values_Click(object sender, EventArgs e)
+        {
+            if (!passwordHandle)
+            {
+                sumOfPurchase_txt.PasswordChar = '\0';
+                sumOfSell_txt.PasswordChar = '\0';
+                Aprox_Profit_txt.PasswordChar = '\0';
+                passwordHandle = true;
+            }
+            else
+            {
+                sumOfSell_txt.PasswordChar = '*';
+                sumOfPurchase_txt.PasswordChar = '*';
+                Aprox_Profit_txt.PasswordChar = '*';
+                passwordHandle = false;
             }
         }
     }

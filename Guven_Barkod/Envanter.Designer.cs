@@ -37,6 +37,13 @@
             btn_Quantity_add = new Button();
             btn_Quantity_remove = new Button();
             btn_Close = new Button();
+            sumOfPurchase_txt = new TextBox();
+            sumOfSell_txt = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            Aprox_Profit_txt = new TextBox();
+            label3 = new Label();
+            btn_Show_Values = new Button();
             ((System.ComponentModel.ISupportInitialize)Inventory_dgw).BeginInit();
             SuspendLayout();
             // 
@@ -47,12 +54,12 @@
             Inventory_dgw.Name = "Inventory_dgw";
             Inventory_dgw.RowTemplate.Height = 25;
             Inventory_dgw.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Inventory_dgw.Size = new Size(859, 403);
+            Inventory_dgw.Size = new Size(966, 403);
             Inventory_dgw.TabIndex = 0;
             // 
             // btn_Sepet
             // 
-            btn_Sepet.Location = new Point(1000, 382);
+            btn_Sepet.Location = new Point(1121, 378);
             btn_Sepet.Name = "btn_Sepet";
             btn_Sepet.Size = new Size(94, 58);
             btn_Sepet.TabIndex = 1;
@@ -62,7 +69,7 @@
             // 
             // btn_Urun_Ekleme
             // 
-            btn_Urun_Ekleme.Location = new Point(1000, 307);
+            btn_Urun_Ekleme.Location = new Point(1121, 303);
             btn_Urun_Ekleme.Name = "btn_Urun_Ekleme";
             btn_Urun_Ekleme.Size = new Size(94, 58);
             btn_Urun_Ekleme.TabIndex = 2;
@@ -81,7 +88,7 @@
             // 
             // btn_Product_remove
             // 
-            btn_Product_remove.Location = new Point(1000, 159);
+            btn_Product_remove.Location = new Point(1121, 155);
             btn_Product_remove.Name = "btn_Product_remove";
             btn_Product_remove.Size = new Size(94, 56);
             btn_Product_remove.TabIndex = 4;
@@ -91,7 +98,7 @@
             // 
             // btn_Product_update
             // 
-            btn_Product_update.Location = new Point(1000, 232);
+            btn_Product_update.Location = new Point(1121, 228);
             btn_Product_update.Name = "btn_Product_update";
             btn_Product_update.Size = new Size(94, 58);
             btn_Product_update.TabIndex = 5;
@@ -101,7 +108,7 @@
             // 
             // btn_Quantity_add
             // 
-            btn_Quantity_add.Location = new Point(1000, 72);
+            btn_Quantity_add.Location = new Point(1121, 68);
             btn_Quantity_add.Name = "btn_Quantity_add";
             btn_Quantity_add.Size = new Size(94, 23);
             btn_Quantity_add.TabIndex = 6;
@@ -111,7 +118,7 @@
             // 
             // btn_Quantity_remove
             // 
-            btn_Quantity_remove.Location = new Point(1000, 112);
+            btn_Quantity_remove.Location = new Point(1121, 108);
             btn_Quantity_remove.Name = "btn_Quantity_remove";
             btn_Quantity_remove.Size = new Size(94, 23);
             btn_Quantity_remove.TabIndex = 7;
@@ -121,7 +128,7 @@
             // 
             // btn_Close
             // 
-            btn_Close.Location = new Point(990, 28);
+            btn_Close.Location = new Point(1111, 24);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(135, 34);
             btn_Close.TabIndex = 34;
@@ -129,11 +136,79 @@
             btn_Close.UseVisualStyleBackColor = true;
             btn_Close.Click += btn_Close_Click;
             // 
+            // sumOfPurchase_txt
+            // 
+            sumOfPurchase_txt.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
+            sumOfPurchase_txt.Location = new Point(79, 503);
+            sumOfPurchase_txt.Name = "sumOfPurchase_txt";
+            sumOfPurchase_txt.Size = new Size(209, 78);
+            sumOfPurchase_txt.TabIndex = 35;
+            // 
+            // sumOfSell_txt
+            // 
+            sumOfSell_txt.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
+            sumOfSell_txt.Location = new Point(467, 503);
+            sumOfSell_txt.Name = "sumOfSell_txt";
+            sumOfSell_txt.Size = new Size(209, 78);
+            sumOfSell_txt.TabIndex = 36;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(122, 485);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 15);
+            label1.TabIndex = 37;
+            label1.Text = "Toplam Alış Maliyeti";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(520, 485);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 15);
+            label2.TabIndex = 38;
+            label2.Text = "Toplam Satış Geliri";
+            // 
+            // Aprox_Profit_txt
+            // 
+            Aprox_Profit_txt.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
+            Aprox_Profit_txt.Location = new Point(767, 503);
+            Aprox_Profit_txt.Name = "Aprox_Profit_txt";
+            Aprox_Profit_txt.Size = new Size(209, 78);
+            Aprox_Profit_txt.TabIndex = 39;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(808, 485);
+            label3.Name = "label3";
+            label3.Size = new Size(111, 15);
+            label3.TabIndex = 40;
+            label3.Text = "Toplam Tahmini Kar";
+            // 
+            // btn_Show_Values
+            // 
+            btn_Show_Values.Location = new Point(1111, 503);
+            btn_Show_Values.Name = "btn_Show_Values";
+            btn_Show_Values.Size = new Size(94, 58);
+            btn_Show_Values.TabIndex = 41;
+            btn_Show_Values.Text = "Değerleri Göster";
+            btn_Show_Values.UseVisualStyleBackColor = true;
+            btn_Show_Values.Click += btn_Show_Values_Click;
+            // 
             // Envanter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1158, 558);
+            ClientSize = new Size(1302, 612);
+            Controls.Add(btn_Show_Values);
+            Controls.Add(label3);
+            Controls.Add(Aprox_Profit_txt);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(sumOfSell_txt);
+            Controls.Add(sumOfPurchase_txt);
             Controls.Add(btn_Close);
             Controls.Add(btn_Quantity_remove);
             Controls.Add(btn_Quantity_add);
@@ -162,5 +237,12 @@
         private Button btn_Quantity_add;
         private Button btn_Quantity_remove;
         private Button btn_Close;
+        private TextBox sumOfPurchase_txt;
+        private TextBox sumOfSell_txt;
+        private Label label1;
+        private Label label2;
+        private TextBox Aprox_Profit_txt;
+        private Label label3;
+        private Button btn_Show_Values;
     }
 }

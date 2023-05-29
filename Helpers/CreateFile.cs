@@ -5,7 +5,9 @@ namespace Helpers
 
     public class CreateFile
     {
-        private static string systemDirectory = "C:\\Users\\mgulle\\Desktop\\log";
+        //private static string systemDirectory = "C:\\Users\\Asus\\OneDrive\\Masaüstü\\log"; // Guven
+        private static string systemDirectory = "C:\\Users\\mgulle\\Desktop\\log"; // ben
+        //private static string systemDirectory = "C:\\Users\\casper\\Desktop\\log"; // Aysi
 
         private static string filePath = $"{systemDirectory}\\files";
         private static string file = $"{systemDirectory}\\files\\{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}.txt";
