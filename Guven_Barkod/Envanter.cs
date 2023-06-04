@@ -1,12 +1,16 @@
 ﻿using Guven_Barkod_BackEnd.Services;
+using Helpers;
+
 namespace Guven_Barkod
 {
     public partial class Envanter : Form
     {
         private ProductService productService;
         private bool passwordHandle = false;
+        private Helper helper;
         public Envanter()
         {
+            helper = new Helper();
             productService = new ProductService();
             InitializeComponent();
         }
@@ -137,6 +141,12 @@ namespace Guven_Barkod
                 Aprox_Profit_txt.PasswordChar = '*';
                 passwordHandle = false;
             }
+        }
+
+        private void Inventory_Update_wExcel_btn_Click(object sender, EventArgs e)
+        {
+            helper.ReadFromExcel();
+            updateData();
         }
     }
 }

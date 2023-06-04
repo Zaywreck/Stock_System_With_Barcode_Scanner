@@ -1,7 +1,6 @@
 ﻿using Guven_Barkod_BackEnd.Entities;
 using Guven_Barkod_BackEnd.Repositories;
 
-
 namespace Guven_Barkod_BackEnd.Services
 {
     public class ProductService
@@ -14,6 +13,13 @@ namespace Guven_Barkod_BackEnd.Services
         public void CreateProduct(Product product)
         {
             _context.Products.Add(product);
+            _context.SaveChanges();
+        }
+
+        public void DeleteAllProducts()
+        {
+            var products = GetAllProducts();
+            _context.RemoveRange(products);
             _context.SaveChanges();
         }
 

@@ -45,6 +45,7 @@
             Customer_PhoneNumber_txt = new TextBox();
             lbl_Customer_Name_Surname = new Label();
             lbl_Customer_PhoneNumber = new Label();
+            Daily_Check_btn = new Button();
             ((System.ComponentModel.ISupportInitialize)Cart_dgw).BeginInit();
             ((System.ComponentModel.ISupportInitialize)form1BindingSource).BeginInit();
             SuspendLayout();
@@ -183,11 +184,22 @@
             lbl_Customer_PhoneNumber.TabIndex = 16;
             lbl_Customer_PhoneNumber.Text = "Müşteri Telefon Numarası";
             // 
+            // Daily_Check_btn
+            // 
+            Daily_Check_btn.Location = new Point(990, 349);
+            Daily_Check_btn.Name = "Daily_Check_btn";
+            Daily_Check_btn.Size = new Size(92, 62);
+            Daily_Check_btn.TabIndex = 17;
+            Daily_Check_btn.Text = "Günlük Rapor";
+            Daily_Check_btn.UseVisualStyleBackColor = true;
+            Daily_Check_btn.Click += Daily_Check_btn_Click;
+            // 
             // Sepet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1153, 482);
+            Controls.Add(Daily_Check_btn);
             Controls.Add(lbl_Customer_PhoneNumber);
             Controls.Add(lbl_Customer_Name_Surname);
             Controls.Add(Customer_PhoneNumber_txt);
@@ -229,5 +241,6 @@
         private TextBox Customer_PhoneNumber_txt;
         private Label lbl_Customer_Name_Surname;
         private Label lbl_Customer_PhoneNumber;
+        private Button Daily_Check_btn;
     }
 }

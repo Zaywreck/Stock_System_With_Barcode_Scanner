@@ -47,7 +47,7 @@ namespace Guven_Barkod
             isHandlingEvent = true;
             try
             {
-                if (Barcode_txt_box.Text.Length >= 6)
+                if (Barcode_txt_box.Text.Length >= 11)
                 {
                     var product = productService.GetProductById(Barcode_txt_box.Text);
                     if (product != null)
@@ -67,7 +67,6 @@ namespace Guven_Barkod
                                 Price = product.Product_Price,
                                 CustomerInfo = Customer_Name_Surname_txt.Text,
                                 CustomerPhoneNumber = Customer_PhoneNumber_txt.Text,
-
                             };
                             products.Add(cartItem);
                         }
@@ -92,7 +91,11 @@ namespace Guven_Barkod
         {
             try
             {
-                CreateFile createFile = new CreateFile(cartItems: products);
+                foreach (CartItem item in products)
+                {
+                    item.TotalPrice = Toplam_txt_box.Text;
+                }
+                Helper createFile = new Helper(cartItems: products);
                 createFile.createLog();
                 foreach (CartItem item in products)
                 {
@@ -190,6 +193,20 @@ namespace Guven_Barkod
             else
             {
                 return;
+            }
+        }
+
+        private void Daily_Check_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Helper Converter = new Helper(products);
+                Converter.ConvertToPDF();
+                MessageBox.Show("Rapor başarılı bir şekilde oluşturuldu");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bir hata ile karşılaşıldı!");
             }
         }
     }

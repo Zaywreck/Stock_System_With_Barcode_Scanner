@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.2.4" />
+    <PackageReference Include="IronPdf" Version="2023.6.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Guven_Barkod_Back\Guven_Barkod_BackEnd.csproj" />
   </ItemGroup>
 
