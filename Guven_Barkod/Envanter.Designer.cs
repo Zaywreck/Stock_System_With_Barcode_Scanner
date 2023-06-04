@@ -44,6 +44,8 @@
             Aprox_Profit_txt = new TextBox();
             label3 = new Label();
             btn_Show_Values = new Button();
+            Inventory_Update_wExcel_btn = new Button();
+            lbl_Excel = new Label();
             ((System.ComponentModel.ISupportInitialize)Inventory_dgw).BeginInit();
             SuspendLayout();
             // 
@@ -147,7 +149,7 @@
             // sumOfSell_txt
             // 
             sumOfSell_txt.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
-            sumOfSell_txt.Location = new Point(467, 503);
+            sumOfSell_txt.Location = new Point(353, 503);
             sumOfSell_txt.Name = "sumOfSell_txt";
             sumOfSell_txt.Size = new Size(209, 78);
             sumOfSell_txt.TabIndex = 36;
@@ -164,7 +166,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(520, 485);
+            label2.Location = new Point(406, 485);
             label2.Name = "label2";
             label2.Size = new Size(103, 15);
             label2.TabIndex = 38;
@@ -173,7 +175,7 @@
             // Aprox_Profit_txt
             // 
             Aprox_Profit_txt.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
-            Aprox_Profit_txt.Location = new Point(767, 503);
+            Aprox_Profit_txt.Location = new Point(653, 503);
             Aprox_Profit_txt.Name = "Aprox_Profit_txt";
             Aprox_Profit_txt.Size = new Size(209, 78);
             Aprox_Profit_txt.TabIndex = 39;
@@ -181,7 +183,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(808, 485);
+            label3.Location = new Point(694, 485);
             label3.Name = "label3";
             label3.Size = new Size(111, 15);
             label3.TabIndex = 40;
@@ -189,7 +191,7 @@
             // 
             // btn_Show_Values
             // 
-            btn_Show_Values.Location = new Point(1111, 503);
+            btn_Show_Values.Location = new Point(927, 514);
             btn_Show_Values.Name = "btn_Show_Values";
             btn_Show_Values.Size = new Size(94, 58);
             btn_Show_Values.TabIndex = 41;
@@ -197,11 +199,32 @@
             btn_Show_Values.UseVisualStyleBackColor = true;
             btn_Show_Values.Click += btn_Show_Values_Click;
             // 
+            // Inventory_Update_wExcel_btn
+            // 
+            Inventory_Update_wExcel_btn.Location = new Point(1121, 464);
+            Inventory_Update_wExcel_btn.Name = "Inventory_Update_wExcel_btn";
+            Inventory_Update_wExcel_btn.Size = new Size(94, 60);
+            Inventory_Update_wExcel_btn.TabIndex = 42;
+            Inventory_Update_wExcel_btn.Text = "Envanteri Güncelle";
+            Inventory_Update_wExcel_btn.UseVisualStyleBackColor = true;
+            Inventory_Update_wExcel_btn.Click += Inventory_Update_wExcel_btn_Click;
+            // 
+            // lbl_Excel
+            // 
+            lbl_Excel.AutoSize = true;
+            lbl_Excel.Location = new Point(1066, 487);
+            lbl_Excel.Name = "lbl_Excel";
+            lbl_Excel.Size = new Size(49, 15);
+            lbl_Excel.TabIndex = 43;
+            lbl_Excel.Text = "Excel ile";
+            // 
             // Envanter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1302, 612);
+            Controls.Add(lbl_Excel);
+            Controls.Add(Inventory_Update_wExcel_btn);
             Controls.Add(btn_Show_Values);
             Controls.Add(label3);
             Controls.Add(Aprox_Profit_txt);
@@ -244,5 +267,7 @@
         private TextBox Aprox_Profit_txt;
         private Label label3;
         private Button btn_Show_Values;
+        private Button Inventory_Update_wExcel_btn;
+        private Label lbl_Excel;
     }
 }
